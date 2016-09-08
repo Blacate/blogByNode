@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title><%= locals.siteName%></title>
+    <meta name="keywords" content="Blacate,前端,javascript,jquery,html5,bootstarp" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Blacate的个人博客，记录学习" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/favicon.ico">
+    <link rel='stylesheet' href='/stylesheets/style.css' type='text/css' media='all' />
+    <script type='text/javascript' src='/jquery/dist/jquery.min.js'></script>
+</head>
+
+<body>
+<div id="main" class="wp uk-grid uk-grid-collapse" style="max-width:1120px">
+    <div class="uk-width-small-1-1 uk-width-medium-1-4 uk-width-large-1-6 posr">
+        <div id="head" data-uk-sticky="{boundary: true,top:80}">
+            <div id="op_head">
+                <div class="uk-panel" id="op_hed">
+                    <div class="tx"><img src="/images/logo.jpg" /></div>
+                    <h1 class="uk-panel-title"><a href="/"><%= locals.name%></a></h1><span><%= locals.declaration%></span>
+                    <div class="my uk-grid-collapse uk-grid uk-grid-width-1-3">
+                        <div><span><%= locals.article%></span><span><i class="uk-icon-file-text"></i></span>
+                            <a href="https://www.fanweimei.com/?page_id=35" title="文章" data-uk-tooltip="{pos:'bottom'}"></a>
+                        </div>
+                        <div><span><%= locals.category%></span><span><i class="uk-icon-folder"></i></span>
+                            <a href="https://www.fanweimei.com/?page_id=33" title="分类" data-uk-tooltip="{pos:'bottom'}"></a>
+                        </div>
+                        <div><span><%= locals.tag%></span><span><i class="uk-icon-tags"></i></span>
+                            <a href="https://www.fanweimei.com/?page_id=37" title="标签" data-uk-tooltip="{pos:'bottom'}"></a>
+                        </div>
+                    </div>
+                    <a href="#s_s" class="s_s uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+                    <ul id="nav-top" class="nav uk-nav uk-hidden-small">
+                        <li id="menu-item-92" class=" uk-active"><a href="/">Home</a></li>
+                        <li id="menu-item-86" class=""><a href="/mood">Mood</a></li>
+                    </ul>
+                    <form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
+                        <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+                    </form>
+                </div>
+            </div>
+            <div class="ft uk-hidden-small">
+                <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+            </div>
+        </div>
+    </div>

@@ -1,14 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= siteName %></title>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    
-    <script src="/javascripts/canvas-nest.min.js"></script>
-  </body>
-</html>
+<% include header%>
+
+<div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
+  <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
+    <div id="index" class="bs uk-text-break">
+      <h4>最新文章</h4>
+      <div id="list">
+        <% result.articles.forEach(function (article) { %>
+        <article class="article class_3">
+          <h1><a href="/article/<%= article._id %>" ><%= article.title %></a></h1>
+          <p><%= article.description %>
+            <time>
+              <br><%= article.time %></time>
+          </p>
+        </article>
+        <% }) %>
+      </div>
+    </div>
+    <ul class="uk-pagination">
+      <% if(result.total > 10)  { %>
+        <% if(pageId > 1) { %>
+          <li><a href="/page/<%= pageId-1 %>">«</a></li>
+        <% } %>
+        <% for (var i = 0; i < Math.ceil(result.total/10);i++) { %>
+          <% if(i+1 == pageId) {%>
+            <li class='uk-active'><span><%= i+1 %></span></li>
+          <% } else { %>
+            <li><a href='/page/<%= i+1 %>'><%= i+1 %></a></li>
+          <% } %>
+        <% } %>
+        <% if(pageId < Math.ceil(result.total/10)) { %>
+          <li><a href="/page/<%= pageId+1  %>">»</a></li>
+        <% } %>
+      <% } %>
+    </ul>
+  </div>
+
+
+<% include footer%>

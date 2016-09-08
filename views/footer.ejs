@@ -1,0 +1,67 @@
+<div id="sidebar" class="uk-width-small-1-1 uk-width-medium-1-4 uk-width-large-3-10">
+    <ul class="ul">
+        <li>
+            <h4>近期文章</h4>
+            <ul>
+                <% locals.recentArticles.forEach(function (article) { %>
+                    <li><a href="/article/<%= article._id %>"><%= article.title %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+        <li>
+            <h4>文章分类</h4>
+            <ul>
+                <% locals.categorys.forEach(function (category) { %>
+                    <li><a href='/category/<%= category._id %>'><%= category.name %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+        <li>
+            <h4>标签云</h4>
+            <div class="post-tags">
+                <a href='http://rabbittu.com/tag/wordpress/' class='tag-link-19' title='6个话题' style='font-size: 12px;'>Wordpress</a>
+                <a href='http://rabbittu.com/tag/code/' class='tag-link-11' title='5个话题' style='font-size: 12px;'>代码</a>
+                <a href='http://rabbittu.com/tag/teach/' class='tag-link-26' title='4个话题' style='font-size: 12px;'>教程</a>
+                <a href='http://rabbittu.com/tag/my-programs/' class='tag-link-16' title='4个话题' style='font-size: 12px;'>自写小程序</a>
+                <a href='http://rabbittu.com/tag/coding/' class='tag-link-15' title='4个话题' style='font-size: 12px;'>编程</a>
+                <a href='http://rabbittu.com/tag/raspi/' class='tag-link-24' title='3个话题' style='font-size: 12px;'>树莓派</a>
+                <a href='http://rabbittu.com/tag/open-source/' class='tag-link-13' title='3个话题' style='font-size: 12px;'>开源</a>
+                <a href='http://rabbittu.com/tag/beautify/' class='tag-link-20' title='2个话题' style='font-size: 12px;'>Beautify</a>
+                <a href='http://rabbittu.com/tag/cosplay/' class='tag-link-9' title='1个话题' style='font-size: 12px;'>Cosplay</a>
+                <a href='http://rabbittu.com/tag/flash-phone/' class='tag-link-31' title='1个话题' style='font-size: 12px;'>刷机折腾</a>
+                <a href='http://rabbittu.com/tag/linux/' class='tag-link-34' title='1个话题' style='font-size: 12px;'>Linux</a>
+                <a href='http://rabbittu.com/tag/lamp/' class='tag-link-25' title='1个话题' style='font-size: 12px;'>LAMP</a>
+                <a href='http://rabbittu.com/tag/fashion-devices/' class='tag-link-14' title='1个话题' style='font-size: 12px;'>潮流电子设备</a>
+                <a href='http://rabbittu.com/tag/googlecardboard/' class='tag-link-10' title='1个话题' style='font-size: 12px;'>GoogleCardboard</a>
+                <a href='http://rabbittu.com/tag/tools/' class='tag-link-12' title='1个话题' style='font-size: 12px;'>工具</a>        </div>
+        </li>
+        <li>
+            <h4>优惠链接</h4>
+            <ul>
+                <% locals.categorys.forEach(function (category) { %>
+                <li><a href='/category/<%= category._id %>'><%= category.name %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="ft uk-visible-small">
+    <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+</div>
+</div>
+<!--<a href="#" class="top" data-uk-smooth-scroll style="display:none"><i class="uk-icon-angle-up"></i></a>-->
+<div id="my-link" class="uk-modal"><div class="uk-modal-dialog"><a class="uk-modal-close uk-close"></a><h2>友情链接</h2><ul id="link_qzhai" class=" uk-subnav uk-subnav-line"><li id="menu-item-601" class="" ><a href="http://qzhai.net/">衫小寨 &#8211; 主题作者</a></li>
+            <li id="menu-item-670" class="" ><a href="http://www.b77d.cc">殇。</a></li>
+            <li id="menu-item-678" class="" ><a href="http://stodgers.com/">平凡人</a></li>
+            <li id="menu-item-599" class="" ><a href="http://blog.csdn.net/u011403655">夕下奕林</a></li>
+            <li id="menu-item-677" class="" ><a href="https://www.2ii.me">维度空间</a></li>
+            <li id="menu-item-648" class="" ><a href="http://www.hecongda.com">文明的猎手</a></li>
+            <li id="menu-item-667" class="" ><a href="http://www.cuixt.com/blog/">Crispxt</a></li>
+            <li id="menu-item-579" class="" ><a href="http://rainey.space">Rainey</a></li>
+            <li id="menu-item-600" class="" ><a href="http://www.zkl2333.com/">My space</a></li>
+            <li id="menu-item-649" class="" ><a href="http://www.cuffeer.com">iSnowHack</a></li>
+            <li id="menu-item-580" class="" ><a href="http://xnix.me">Season&#8217;s neko</a></li>
+        </ul></div></div>
+</body>
+
+</html>

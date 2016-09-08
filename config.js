@@ -5,5 +5,7 @@ module.exports = {
     bindPort: 4000,
 
     // site settings
-    siteName: "Aesative's space",
+    siteName: "Blacate's space",
+    name: "Blacate",
+    declaration: "今天晚上吃什么呢？",
 }
