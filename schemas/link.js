@@ -7,7 +7,8 @@ var ObjectId = Schema.Types.ObjectId;
 module.exports = new Schema({
     name: String,
     category: String,
-    link: String
+    link: String,
+    updateTime:{type: Date, default:Date.now()}
 }).pre('save',function (next) {
     if (this.isNew) {
         this.createAt = Date.now();

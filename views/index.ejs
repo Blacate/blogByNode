@@ -10,7 +10,7 @@
           <h1><a href="/article/<%= article._id %>" ><%= article.title %></a></h1>
           <p><%= article.description %>
             <time>
-              <br><%= article.time %></time>
+              <br><%= moment(article.updateTime).format("YYYY年MM月DD日") %></time>
           </p>
         </article>
         <% }) %>

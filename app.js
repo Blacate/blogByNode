@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var config = require('./config.js');
 var port = config.bindPort || 3000;
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -22,11 +22,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.locals.moment = require('moment');
 
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/admin', admin);
 
 // error handlers
 

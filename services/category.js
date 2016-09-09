@@ -4,5 +4,9 @@
 var Category = require('../model').Category;
 
 exports.fetchAll = function () {
-    Category.find({}).sort({updateTime: -1});
+    return Category.find({});
+};
+
+exports.add = function (data) {
+    return new Category(data).save();
 };

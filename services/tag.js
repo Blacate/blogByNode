@@ -3,6 +3,10 @@
  */
 var Tag = require('../model').Tag;
 
-exports.fetchAll = function() {
-    Tag.find({}).sort({updateTime: -1});
+exports.fetchAll = function () {
+    return Tag.find({});
+};
+
+exports.add = function (data) {
+  return new Tag(data).save();
 };

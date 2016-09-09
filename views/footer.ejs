@@ -19,27 +19,18 @@
         <li>
             <h4>标签云</h4>
             <div class="post-tags">
-                <a href='http://rabbittu.com/tag/wordpress/' class='tag-link-19' title='6个话题' style='font-size: 12px;'>Wordpress</a>
-                <a href='http://rabbittu.com/tag/code/' class='tag-link-11' title='5个话题' style='font-size: 12px;'>代码</a>
-                <a href='http://rabbittu.com/tag/teach/' class='tag-link-26' title='4个话题' style='font-size: 12px;'>教程</a>
-                <a href='http://rabbittu.com/tag/my-programs/' class='tag-link-16' title='4个话题' style='font-size: 12px;'>自写小程序</a>
-                <a href='http://rabbittu.com/tag/coding/' class='tag-link-15' title='4个话题' style='font-size: 12px;'>编程</a>
-                <a href='http://rabbittu.com/tag/raspi/' class='tag-link-24' title='3个话题' style='font-size: 12px;'>树莓派</a>
-                <a href='http://rabbittu.com/tag/open-source/' class='tag-link-13' title='3个话题' style='font-size: 12px;'>开源</a>
-                <a href='http://rabbittu.com/tag/beautify/' class='tag-link-20' title='2个话题' style='font-size: 12px;'>Beautify</a>
-                <a href='http://rabbittu.com/tag/cosplay/' class='tag-link-9' title='1个话题' style='font-size: 12px;'>Cosplay</a>
-                <a href='http://rabbittu.com/tag/flash-phone/' class='tag-link-31' title='1个话题' style='font-size: 12px;'>刷机折腾</a>
-                <a href='http://rabbittu.com/tag/linux/' class='tag-link-34' title='1个话题' style='font-size: 12px;'>Linux</a>
-                <a href='http://rabbittu.com/tag/lamp/' class='tag-link-25' title='1个话题' style='font-size: 12px;'>LAMP</a>
-                <a href='http://rabbittu.com/tag/fashion-devices/' class='tag-link-14' title='1个话题' style='font-size: 12px;'>潮流电子设备</a>
-                <a href='http://rabbittu.com/tag/googlecardboard/' class='tag-link-10' title='1个话题' style='font-size: 12px;'>GoogleCardboard</a>
-                <a href='http://rabbittu.com/tag/tools/' class='tag-link-12' title='1个话题' style='font-size: 12px;'>工具</a>        </div>
+                <% locals.tags.forEach(function (tag) { %>
+                    <a href='/tag/<%= tag._id %>' class='tag-link-19' title='6个话题' style='font-size: 12px;'><%= tag.name %></a>
+                <% })%>
+
+
+            </div>
         </li>
         <li>
             <h4>优惠链接</h4>
             <ul>
-                <% locals.categorys.forEach(function (category) { %>
-                <li><a href='/category/<%= category._id %>'><%= category.name %></a></li>
+                <% locals.discounts.forEach(function (link) { %>
+                <li><a href='<%= link.link %>'><%= link.name %></a></li>
                 <% }) %>
             </ul>
         </li>
@@ -62,6 +53,7 @@
             <li id="menu-item-649" class="" ><a href="http://www.cuffeer.com">iSnowHack</a></li>
             <li id="menu-item-580" class="" ><a href="http://xnix.me">Season&#8217;s neko</a></li>
         </ul></div></div>
+<script src="/javascripts/canvas-nest.min.js"></script>
 </body>
 
 </html>

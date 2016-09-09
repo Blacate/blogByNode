@@ -5,7 +5,6 @@ var Schema = require('mongoose').Schema;
 
 module.exports = new Schema({
     name: String
-
 }).pre('save',function (next) {
     if (this.isNew) {
         this.createAt = Date.now();
