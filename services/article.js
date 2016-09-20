@@ -15,4 +15,11 @@ exports.fetchAll = function() {
 
 exports.add = function(data) {
     return new Article(data).save();
-}
+};
+
+exports.get = function (articleId) {
+    return Article.findByIdAndUpdate(articleId, {$inc: { reads: 1 }})
+        .then(function () {
+            return Article.findById(articleId).populate("tags");
+        })
+};

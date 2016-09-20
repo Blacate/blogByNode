@@ -4,6 +4,7 @@ var articleController = require('../controllers/article');
 var categoryController = require('../controllers/category');
 var linkController = require('../controllers/link');
 var tagController = require('../controllers/tag');
+var moodController = require('../controllers/mood');
 
 /* GET admin listing. */
 router.get('/', function(req, res) {
@@ -45,12 +46,24 @@ router.post('/link', function (req, res) {
 
 router.post('/article', function (req, res) {
     var article = req.body;
+    console.log(article);
     articleController.addNew(article)
         .then(function () {
             res.send(204);
         })
         .catch(function (err) {
             res.send(400,err);
+        })
+});
+
+router.post('/mood', function (req, res) {
+    var mood= req.body;
+    moodController.addNew(mood)
+        .then(function () {
+            res.send(204);
+        })
+        .catch(function (err) {
+            res.send(400, err);
         })
 });
 

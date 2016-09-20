@@ -5,6 +5,7 @@ var articleController = require('../controllers/article');
 var categoryController = require('../controllers/category');
 var linkController = require('../controllers/link');
 var tagController = require('../controllers/tag');
+var moodController = require('../controllers/mood');
 
 //site information
 router.use(function (req, res, next) {
@@ -68,7 +69,7 @@ router.get('/', function(req, res) {
   .then(function (_result) {
     res.render('index', {
       result : _result,
-      pageId: _pageId
+      pageId: parseInt(_pageId, 10)
     });
   })
 });
@@ -79,9 +80,44 @@ router.get('/page/:pageId', function(req, res) {
       .then(function (_result) {
         res.render('index', {
           result : _result,
-          pageId: _pageId
+          pageId: parseInt(_pageId, 10)
         });
       })
+});
+
+//Mood
+router.get('/mood', function (req,res) {
+    var _pageId = 1;
+    moodController.fetchBody(10, (_pageId-1)*10)
+        .then(function (_result) {
+            res.render('mood', {
+                result : _result,
+                pageId: parseInt(_pageId, 10)
+            });
+        })
+});
+
+router.get('/mood/:pageId', function(req, res) {
+    var _pageId = req.params.pageId;
+    moodController.fetchBody(10, (_pageId-1)*10)
+        .then(function (_result) {
+            res.render('mood', {
+                result : _result,
+                pageId : parseInt(_pageId, 10)
+            });
+        })
+});
+
+//article
+router.get('/article/:articleId', function (req, res) {
+    var _articleId = req.params.articleId;
+    articleController.getArticle(_articleId)
+    .then(function (result) {
+        console.log(result);
+        res.render('article', {
+            article: result,
+        })
+    });
 });
 
 module.exports = router;

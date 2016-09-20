@@ -1,0 +1,105 @@
+<% include header%>
+
+<ul id="nav-top" class="nav uk-nav uk-hidden-small">
+  <li id="menu-item-92" class=" uk-active"><a href="/">Home</a></li>
+  <li id="menu-item-86" class=""><a href="/mood">Mood</a></li>
+</ul>
+<form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
+  <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+</form>
+</div>
+</div>
+<div class="ft uk-hidden-small">
+  <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+</div>
+</div>
+</div>
+
+<div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
+  <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
+    <div id="index" class="bs uk-text-break"><article id="article" class="uk-article">
+        <h1 class="uk-article-title"><%= article.title %></h1>
+
+        <ul class="singlenav uk-breadcrumb">
+          <li><i class="uk-icon-calendar"></i> <%= moment(article.updateTime).format("YYYY-MM-DD") %></li>
+          <li><i class="uk-icon-eye"></i> <%= article.reads  %></li>
+          <li><i class="uk-icon-commenting-o"></i>  <a href="https://www.fanweimei.com/?p=20#comments">8</a></li>
+        </ul>
+        <p><%= article.body %></p>
+        <div class="reward"><a href="#reward" class="rewards uk-button">赏</a></div>
+        <div id="reward" class="uk-modal">
+          <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close"></a>
+            <div class="uk-modal-header">感谢打赏!</div>
+            <div class="uk-thumbnail"><img src="http://blog.ikyxxs.com/wp-content/uploads/2016/04/QQ图片20160411154533-e1460388476425.jpg">
+              <div class="uk-thumbnail-caption">微信</div>
+            </div>
+          </div>
+        </div>
+        <div class="tags uk-clearfix">
+          <div class="tags uk-float-left"><i class="uk-icon-tags"></i>
+            <% article.tags.forEach(function (tag) { %>
+            <a href="/tag/<%=  tag._id %>" rel="tag"><%= tag.name %></a>
+            <% }) %>
+          </div>
+          <div class="uk-float-right"></div>
+        </div>
+      </article>
+      <div id="qzhai_comments">
+        <h4>评论</h4>
+        <ul id="comments" class="uk-comment-list">
+          <li id="li-comment-73804">
+            <article class="uk-comment"><img src="http://gravatar.duoshuo.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50&#038;d=retro&#038;r=g" width="50" height="50" alt="" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />
+              <h6 class="uk-comment-title uk-clearfix"><cite>匿名</cite><time>2016-09-07 09:15</time><span class="uk-comment-meta uk-float-right"><a rel='nofollow' class='comment-reply-link' href='http://blog.ikyxxs.com/index.php/2016/08/01/spring-boot%e5%ae%9a%e5%88%b6banner/?replytocom=73804#respond' onclick='return addComment.moveForm( "comment-73804", "73804", "respond", "743" )' aria-label='回复给'>回复 </a></span></h6>
+              <p>啦啦啦啦啦</p>
+            </article>
+          </li>
+          </li>
+          <!-- #comment-## -->
+        </ul>
+        <ul class="uk-pagination">
+          <li class="uk-pagination-previous"></li>
+          <li class="uk-pagination-next"></li>
+        </ul>
+        <div id="respond" class="comment_form" role="form">
+          <h2 id="reply-title" class="comments-title">发表评论 <small>
+              <a rel="nofollow" id="cancel-comment-reply-link" href="/index.php/2016/08/01/spring-boot%e5%ae%9a%e5%88%b6banner/#respond" style="display:none;">点击这里取消回复。</a>                    </small></h2>
+          <form action="http://blog.ikyxxs.com/wp-comments-post.php" method="post" class="uk-form" id="commentform">
+            <textarea id="comment" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="内容..." tabindex="1" name="comment"></textarea>
+            <div class="text uk-grid uk-grid-small">
+              <div class="uk-width-medium-1-4 uk-form-icon">
+                <i class="uk-icon-user"></i>
+                <input id="author" type="text" tabindex="2" value="" name="author" placeholder="昵称*" class="uk-width-1-1">
+              </div>
+              <div class=" uk-width-medium-1-4 uk-form-icon">
+                <i class="uk-icon-envelope"></i>
+                <input id="email" type="text" tabindex="3" value="" name="email" placeholder="邮箱*" class="uk-width-1-1">
+              </div>
+              <div class="uk-width-medium-1-4 uk-form-icon">
+                <i class="uk-icon-laptop"></i>
+                <input id="url" type="text" tabindex="4" value="" name="url" placeholder="网址" class="uk-width-1-1">
+              </div>
+              <div class="uk-width-medium-1-4">
+                <button name="submit" type="submit" id="submit" class="uk-button uk-width-1-1" tabindex="5" />回复</button>
+              </div>
+            </div>
+            <div class="uk-margin-small-top"></div>
+            <input type='hidden' name='comment_post_ID' value='743' id='comment_post_ID' />
+            <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+            <p style="display: none;">
+              <input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="89d72a7f2e" />
+            </p>
+            <p style="display: none;">
+              <input type="hidden" id="ak_js" name="ak_js" value="157" />
+            </p>
+          </form>
+        </div>
+        </form>
+        <!-- Comment Form -->
+      </div>
+    </div>
+
+  </div>
+
+
+<% include footer%>

@@ -38,12 +38,17 @@ exports.fetchBody = function (limit, offset) {
             return result;
     })
 };
+
+exports.getArticle = function (articleId) {
+  return Article.get(articleId);
+};
+
 exports.addNew = function (data) {
     var article = {
         title: data.title,
         updateTime: Date.now(),
         belongs: data.belongs,
-        tag: data.tag,
+        tags: data.tags,
         description:data.description,
         body: data.body
     };

@@ -1,0 +1,53 @@
+<% include header%>
+
+<ul id="nav-top" class="nav uk-nav uk-hidden-small">
+    <li id="menu-item-92" class=" "><a href="/">Home</a></li>
+    <li id="menu-item-86" class="uk-active"><a href="/mood">Mood</a></li>
+</ul>
+<form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
+    <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+</form>
+</div>
+</div>
+<div class="ft uk-hidden-small">
+    <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+</div>
+</div>
+</div>
+
+<div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
+    <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
+        <div id="index" class="bs uk-text-break">
+            <h4>说说话</h4>
+            <div id="list">
+                <% result.moods.forEach(function (mood) { %>
+                <article class="article class_3">
+                    <p><%= mood.body %>
+                        <time>
+                            <br><%= moment(mood.updateTime).format("YYYY年MM月DD日 HH:mm") %></time>
+                    </p>
+                </article>
+                <% }) %>
+            </div>
+        </div>
+        <ul class="uk-pagination">
+            <% if(result.total > 10)  { %>
+            <% if(pageId > 1) { %>
+            <li><a href="/mood/<%= pageId-1 %>">«</a></li>
+            <% } %>
+            <% for (var i = 0; i < Math.ceil(result.total/10);i++) { %>
+            <% if(i+1 == pageId) {%>
+            <li class='uk-active'><span><%= i+1 %></span></li>
+            <% } else { %>
+            <li><a href='/mood/<%= i+1 %>'><%= i+1 %></a></li>
+            <% } %>
+            <% } %>
+            <% if(pageId < Math.ceil(result.total/10)) { %>
+            <li><a href="/mood/<%= pageId + 1  %>">»</a></li>
+            <% } %>
+            <% } %>
+        </ul>
+    </div>
+
+
+<% include footer%>

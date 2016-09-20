@@ -10,10 +10,12 @@ var Article = connection.model('article', require('./schemas/article'));
 var Category = connection.model('category', require('./schemas/category'));
 var Link = connection.model('link', require('./schemas/link'));
 var Tag = connection.model('tag', require('./schemas/tag'));
+var Mood = connection.model('mood', require('./schemas/mood'));
 
 module.exports = {
     Article,
     Category,
     Link,
-    Tag
+    Tag,
+    Mood
 };
