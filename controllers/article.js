@@ -54,3 +54,7 @@ exports.addNew = function (data) {
     };
     return Article.add(article);
 };
+
+exports.fetchAll = function () {
+    return Article.fetchAll();
+}

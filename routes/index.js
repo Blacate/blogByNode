@@ -113,11 +113,48 @@ router.get('/article/:articleId', function (req, res) {
     var _articleId = req.params.articleId;
     articleController.getArticle(_articleId)
     .then(function (result) {
-        console.log(result);
         res.render('article', {
             article: result,
         })
     });
 });
+
+//articles
+router.get('/articles', function (req, res) {
+    articleController.fetchAll()
+        .then(function (result) {
+            res.render()
+        })
+});
+
+//categories
+router.get('/categories', function (req, res) {
+    categoryController.fetchAll()
+        .then(function (result) {
+            res.render()
+        })
+});
+
+//tags
+router.get('/tags', function (req, res) {
+    tagController.fetchAll()
+        .then(function (result) {
+            res.render()
+        })
+});
+
+//category
+router.get('/category/:id', function (req, res) {
+    var categoryId = req.params.id;
+
+});
+
+//tag
+router.get('/tag/:id', function (req, res) {
+    var tagId = req.params.id;
+
+});
+
+
 
 module.exports = router;
