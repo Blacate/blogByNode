@@ -23,3 +23,11 @@ exports.get = function (articleId) {
             return Article.findById(articleId).populate("tags");
         })
 };
+
+exports.findByCategory =  function (categoryId) {
+	return Article.find({belongs: categoryId});
+}
+
+exports.findByTag = function (tagId) {
+	return Article.find({tags: tagId});
+}

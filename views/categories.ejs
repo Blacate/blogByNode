@@ -1,0 +1,32 @@
+<% include header%>
+
+<ul id="nav-top" class="nav uk-nav uk-hidden-small">
+  <li id="menu-item-92" class="uk-active "><a href="/">Home</a></li>
+  <li id="menu-item-86" class=""><a href="/mood">Mood</a></li>
+</ul>
+<form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
+  <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+</form>
+</div>
+</div>
+<div class="ft uk-hidden-small">
+  <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+</div>
+</div>
+</div>
+
+<div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
+  <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
+    <div id="index" class="bs uk-text-break">
+      <h4>所有分类</h4>
+      <div id="list">
+        <p class="date"><strong><%= locals.name %></strong>目前共有分类：  <%= categories.length %>种  </p>
+        <% categories.forEach(function (category) { %>       
+          <h2><a href="/category/<%= category._id %>"  ><%= category.name %></a></h2>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+
+<% include footer%>

@@ -58,3 +58,29 @@ exports.addNew = function (data) {
 exports.fetchAll = function () {
     return Article.fetchAll();
 }
+
+exports.getByCategory = function (categoryId) {
+    var result = [];
+    return Article.findByCategory(categoryId)
+    .then(function (articles) {
+      result.articles = articles;
+      return Category.find(categoryId);
+    })
+    .then(function (category) {
+      result.CategoryName = category.name;
+      return result;
+    })
+}
+
+exports.getByTag = function (tagId) {
+    var  result = [];
+    return Article.findByTag(tagId)
+      .then(function (articles) {
+        result.articles = articles;
+        return Tag.find(tagId);
+      })
+      .then(function (tag) {
+        result.TagName =  tag.name;
+        return result;
+      })
+}

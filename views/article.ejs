@@ -31,7 +31,7 @@
           <div class="uk-modal-dialog">
             <a class="uk-modal-close uk-close"></a>
             <div class="uk-modal-header">感谢打赏!</div>
-            <div class="uk-thumbnail"><img src="http://blog.ikyxxs.com/wp-content/uploads/2016/04/QQ图片20160411154533-e1460388476425.jpg">
+            <div class="uk-thumbnail"><img src="">
               <div class="uk-thumbnail-caption">微信</div>
             </div>
           </div>
@@ -45,58 +45,67 @@
           <div class="uk-float-right"></div>
         </div>
       </article>
-      <div id="qzhai_comments">
-        <h4>评论</h4>
-        <ul id="comments" class="uk-comment-list">
-          <li id="li-comment-73804">
-            <article class="uk-comment"><img src="http://gravatar.duoshuo.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50&#038;d=retro&#038;r=g" width="50" height="50" alt="" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />
-              <h6 class="uk-comment-title uk-clearfix"><cite>匿名</cite><time>2016-09-07 09:15</time><span class="uk-comment-meta uk-float-right"><a rel='nofollow' class='comment-reply-link' href='http://blog.ikyxxs.com/index.php/2016/08/01/spring-boot%e5%ae%9a%e5%88%b6banner/?replytocom=73804#respond' onclick='return addComment.moveForm( "comment-73804", "73804", "respond", "743" )' aria-label='回复给'>回复 </a></span></h6>
-              <p>啦啦啦啦啦</p>
-            </article>
-          </li>
-          </li>
-          <!-- #comment-## -->
-        </ul>
-        <ul class="uk-pagination">
-          <li class="uk-pagination-previous"></li>
-          <li class="uk-pagination-next"></li>
-        </ul>
-        <div id="respond" class="comment_form" role="form">
-          <h2 id="reply-title" class="comments-title">发表评论 <small>
-              <a rel="nofollow" id="cancel-comment-reply-link" href="/index.php/2016/08/01/spring-boot%e5%ae%9a%e5%88%b6banner/#respond" style="display:none;">点击这里取消回复。</a>                    </small></h2>
-          <form action="http://blog.ikyxxs.com/wp-comments-post.php" method="post" class="uk-form" id="commentform">
-            <textarea id="comment" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="内容..." tabindex="1" name="comment"></textarea>
-            <div class="text uk-grid uk-grid-small">
-              <div class="uk-width-medium-1-4 uk-form-icon">
-                <i class="uk-icon-user"></i>
-                <input id="author" type="text" tabindex="2" value="" name="author" placeholder="昵称*" class="uk-width-1-1">
-              </div>
-              <div class=" uk-width-medium-1-4 uk-form-icon">
-                <i class="uk-icon-envelope"></i>
-                <input id="email" type="text" tabindex="3" value="" name="email" placeholder="邮箱*" class="uk-width-1-1">
-              </div>
-              <div class="uk-width-medium-1-4 uk-form-icon">
-                <i class="uk-icon-laptop"></i>
-                <input id="url" type="text" tabindex="4" value="" name="url" placeholder="网址" class="uk-width-1-1">
-              </div>
-              <div class="uk-width-medium-1-4">
-                <button name="submit" type="submit" id="submit" class="uk-button uk-width-1-1" tabindex="5" />回复</button>
-              </div>
+
+        <div id="qzhai_comments">
+            <h4>评论</h4>
+            <div class="uk-alert">
+                <p>还没有任何评论，你来说两句吧</p>
             </div>
-            <div class="uk-margin-small-top"></div>
-            <input type='hidden' name='comment_post_ID' value='743' id='comment_post_ID' />
-            <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-            <p style="display: none;">
-              <input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="89d72a7f2e" />
-            </p>
-            <p style="display: none;">
-              <input type="hidden" id="ak_js" name="ak_js" value="157" />
-            </p>
-          </form>
+            <div id="respond" class="comment_form" role="form">
+                <h2 id="reply-title" class="comments-title">发表评论 <small>
+                        <a rel="nofollow" id="cancel-comment-reply-link" href="/?p=506#respond" style="display:none;">点击这里取消回复。</a>                    </small></h2>
+                <form action="https://www.fanweimei.com/wp-comments-post.php" method="post" class="uk-form" id="commentform">
+                    <div class="textarea_qzhai">
+                        <ul class="uk-subnav">
+                            <li id="emojis_a" class="uk-parent">
+                                <a href="javascript:;"> <i class="uk-icon-smile-o"></i></a>
+                            </li>
+                            <li>
+                                <a onclick="javascript:grin('<img src=\'输入图片地址\' />')"> <i class="uk-icon-image"></i></a>
+                            </li>
+                        </ul>
+                        <div id="emojis_list" class="uk-overflow-container" style="display:none;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a onclick="javascript:grin(':razz:')"><img src=""></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <textarea id="comment" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="内容..." tabindex="1" name="comment"></textarea>
+                    </div>
+                    <div class="text uk-grid uk-grid-small">
+                        <div class="uk-width-medium-1-4 uk-form-icon">
+                            <i class="uk-icon-user"></i>
+                            <input id="author" type="text" tabindex="2" value="" name="author" placeholder="昵称*" class="uk-width-1-1">
+                        </div>
+                        <div class=" uk-width-medium-1-4 uk-form-icon">
+                            <i class="uk-icon-envelope"></i>
+                            <input id="email" type="text" tabindex="3" value="" name="email" placeholder="邮箱*" class="uk-width-1-1">
+                        </div>
+                        <div class="uk-width-medium-1-4 uk-form-icon">
+                            <i class="uk-icon-laptop"></i>
+                            <input id="url" type="text" tabindex="4" value="" name="url" placeholder="网址" class="uk-width-1-1">
+                        </div>
+                        <div class="uk-width-medium-1-4">
+                            <button name="submit" type="submit" id="submit" class="uk-button uk-width-1-1" tabindex="5" />回复</button>
+                        </div>
+                    </div>
+                    <div class="uk-margin-small-top">
+                        <div style="margin-top:5px;">
+                            <input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked" style="margin-right:5px;" />
+                            <label for="comment_mail_notify">有人回复时邮件通知我</label>
+                        </div>
+                    </div>
+                    <input type='hidden' name='comment_post_ID' value='506' id='comment_post_ID' />
+                    <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                </form>
+            </div>
+            </form>
+            
         </div>
-        </form>
-        <!-- Comment Form -->
-      </div>
+      <!-- Comment Form -->
     </div>
 
   </div>

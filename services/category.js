@@ -10,3 +10,7 @@ exports.fetchAll = function () {
 exports.add = function (data) {
     return new Category(data).save();
 };
+
+exports.find = function (id) {
+	return Category.findById(id);
+}

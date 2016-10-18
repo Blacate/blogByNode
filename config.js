@@ -7,5 +7,5 @@ module.exports = {
     // site settings
     siteName: "Blacate's space",
     name: "Blacate",
-    declaration: "今天晚上吃什么呢？",
+    declaration: "饼饼的果果最棒了！",
 }
