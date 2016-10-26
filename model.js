@@ -11,11 +11,13 @@ var Category = connection.model('category', require('./schemas/category'));
 var Link = connection.model('link', require('./schemas/link'));
 var Tag = connection.model('tag', require('./schemas/tag'));
 var Mood = connection.model('mood', require('./schemas/mood'));
+var Comment = connection.model('comment', require('./schemas/comment'))
 
 module.exports = {
     Article,
     Category,
     Link,
     Tag,
-    Mood
+    Mood,
+    Comment
 };

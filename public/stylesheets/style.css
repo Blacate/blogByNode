@@ -9908,6 +9908,12 @@ a:hover {
   }
 }
 
+@media screen and (min-width: 768px) {
+  #head {
+    position: fixed!important;
+  }
+}
+
 @media only screen and (max-width:480px) {
   .uk-pagination {
     margin-bottom: 10px!important
@@ -9988,4 +9994,10 @@ a:hover {
     float: none;
     text-align: center
   }
+}
+
+.fix {
+  position: fixed!important;
+  top: 0px;
+  width: 260px;
 }

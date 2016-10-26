@@ -26,8 +26,12 @@ exports.get = function (articleId) {
 
 exports.findByCategory =  function (categoryId) {
 	return Article.find({belongs: categoryId});
-}
+};
 
 exports.findByTag = function (tagId) {
 	return Article.find({tags: tagId});
-}
+};
+
+exports.search = function (s) {
+    return Article.find({body: {$regex : s }})
+};

@@ -4,16 +4,28 @@
   <li id="menu-item-92" class=" uk-active"><a href="/">Home</a></li>
   <li id="menu-item-86" class=""><a href="/mood">Mood</a></li>
 </ul>
-<form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
-  <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+<form class="s uk-form uk-hidden-small" id="searchform" method="post" action="/search">
+  <input class="uk-width-1-1 " type="text" value="" name="q" id="s" placeholder="Search" />
 </form>
 </div>
 </div>
 <div class="ft uk-hidden-small">
-  <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+  <p><a href="#my_link" data-uk-modal="{target:'#my-link'}">友情链接</a> </p>
 </div>
 </div>
 </div>
+<div id="s_s" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <ul id="nav-top-s" class="uk-nav uk-nav-offcanvas" data-uk-nav="">
+            <li id="menu-item-203" class=""><a href="/"> Home</a></li>
+            <li id="menu-item-987" class=""><a href="/mood"> Mood</a></li>
+        </ul>
+        <form class="uk-form" id="searchform" method="post" action="/search">
+            <input class="uk-width-1-1 " type="text" value="" name="q" id="s" placeholder="Search">
+        </form>
+    </div>
+</div>
+
 
 <div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
   <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
@@ -26,7 +38,7 @@
           <li><i class="uk-icon-commenting-o"></i>  <a href="https://www.fanweimei.com/?p=20#comments">8</a></li>
         </ul>
         <p><%= article.body %></p>
-        <div class="reward"><a href="#reward" class="rewards uk-button">赏</a></div>
+        <div class="reward"><a href="#reward" class="rewards uk-button" data-uk-modal="{target:'#reward'}">赏</a></div>
         <div id="reward" class="uk-modal">
           <div class="uk-modal-dialog">
             <a class="uk-modal-close uk-close"></a>
@@ -48,13 +60,36 @@
 
         <div id="qzhai_comments">
             <h4>评论</h4>
-            <div class="uk-alert">
-                <p>还没有任何评论，你来说两句吧</p>
-            </div>
+            <!--if no comments-->
+            <!--<div class="uk-alert">-->
+                <!--<p>还没有任何评论，你来说两句吧</p>-->
+            <!--</div>-->
+            <!--parent comment-->
+            <li id="li-comment-39">
+                <article class="uk-comment">
+                    <img src="" srcset="" class="avatar avatar-50 photo" height="50" width="50">
+                    <h6 class="uk-comment-title uk-clearfix">
+                        <cite>
+                            <a href="http://anyisalin.com" rel="external nofollow" class="url">AnyISalIn</a>
+                        </cite>
+                        <time>2016-05-21 15:29</time>
+                        <span class="uk-comment-meta uk-float-right">
+                            <a rel="nofollow" class="comment-reply-link" href="" onclick="return addComment.moveForm( &quot;comment-39&quot;, &quot;39&quot;, &quot;respond&quot;, &quot;20&quot; )" aria-label="回复给AnyISalIn">回复 </a>
+                        </span></h6><p>加个友链</p>
+                </article></li>
+            <!--children comment-->
+            <ul class="children">
+                <li id="li-comment-42"><article class="uk-comment"><img alt="" src="https://secure.gravatar.com/avatar/e9d7e91dd2d8deb9db9323100deeb627?s=50&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e9d7e91dd2d8deb9db9323100deeb627?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"><h6 class="uk-comment-title uk-clearfix"><cite>范伟梅</cite><time>2016-05-21 20:11</time><span class="uk-comment-meta uk-float-right" style="display: none;"><a rel="nofollow" class="comment-reply-link" href="https://www.fanweimei.com/?p=20&amp;replytocom=42#respond" onclick="return addComment.moveForm( &quot;comment-42&quot;, &quot;42&quot;, &quot;respond&quot;, &quot;20&quot; )" aria-label="回复给范伟梅">回复 </a></span></h6><p>已经添加 可以验证</p>
+                    </article></li><ul class="children">
+                    <li id="li-comment-43"><article class="uk-comment"><img alt="" src="https://secure.gravatar.com/avatar/029d905cdb639ea22f492497480fa48e?s=50&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/029d905cdb639ea22f492497480fa48e?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"><h6 class="uk-comment-title uk-clearfix"><cite><a href="http://anyisalin.com" rel="external nofollow" class="url">AnyISalIn</a></cite><time>2016-05-21 20:21</time><span class="uk-comment-meta uk-float-right" style="display: none;"><a rel="nofollow" class="comment-reply-link" href="https://www.fanweimei.com/?p=20&amp;replytocom=43#respond" onclick="return addComment.moveForm( &quot;comment-43&quot;, &quot;43&quot;, &quot;respond&quot;, &quot;20&quot; )" aria-label="回复给AnyISalIn">回复 </a></span></h6><p>OK, 我也添加了</p>
+                        </article></li><!-- #comment-## -->
+                </ul><!-- .children -->
+                <!-- #comment-## -->
+            </ul>
             <div id="respond" class="comment_form" role="form">
                 <h2 id="reply-title" class="comments-title">发表评论 <small>
                         <a rel="nofollow" id="cancel-comment-reply-link" href="/?p=506#respond" style="display:none;">点击这里取消回复。</a>                    </small></h2>
-                <form action="https://www.fanweimei.com/wp-comments-post.php" method="post" class="uk-form" id="commentform">
+                <form action="/comment" method="post" class="uk-form" id="commentform">
                     <div class="textarea_qzhai">
                         <ul class="uk-subnav">
                             <li id="emojis_a" class="uk-parent">
@@ -89,7 +124,7 @@
                             <input id="url" type="text" tabindex="4" value="" name="url" placeholder="网址" class="uk-width-1-1">
                         </div>
                         <div class="uk-width-medium-1-4">
-                            <button name="submit" type="submit" id="submit" class="uk-button uk-width-1-1" tabindex="5" />回复</button>
+                            <button type="submit" id="submit" class="uk-button uk-width-1-1" tabindex="5" />回复</button>
                         </div>
                     </div>
                     <div class="uk-margin-small-top">

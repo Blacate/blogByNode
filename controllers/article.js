@@ -57,7 +57,7 @@ exports.addNew = function (data) {
 
 exports.fetchAll = function () {
     return Article.fetchAll();
-}
+};
 
 exports.getByCategory = function (categoryId) {
     var result = [];
@@ -70,7 +70,7 @@ exports.getByCategory = function (categoryId) {
       result.CategoryName = category.name;
       return result;
     })
-}
+};
 
 exports.getByTag = function (tagId) {
     var  result = [];
@@ -83,4 +83,8 @@ exports.getByTag = function (tagId) {
         result.TagName =  tag.name;
         return result;
       })
-}
+};
+
+exports.search = function (s) {
+    return Article.search(s);
+};

@@ -4,8 +4,8 @@
     <li id="menu-item-92" class=" "><a href="/">Home</a></li>
     <li id="menu-item-86" class="uk-active"><a href="/mood">Mood</a></li>
 </ul>
-<form class="s uk-form uk-hidden-small" id="searchform" method="get" action="/search">
-    <input class="uk-width-1-1 " type="text" value="" name="s" id="s" placeholder="Search" />
+<form class="s uk-form uk-hidden-small" id="searchform" method="post" action="/search">
+  <input class="uk-width-1-1 " type="text" value="" name="q" id="s" placeholder="Search" />
 </form>
 </div>
 </div>
@@ -14,7 +14,17 @@
 </div>
 </div>
 </div>
-
+<div id="s_s" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <ul id="nav-top-s" class="uk-nav uk-nav-offcanvas" data-uk-nav="">
+            <li id="menu-item-203" class=""><a href="/"> Home</a></li>
+            <li id="menu-item-987" class=""><a href="/mood"> Mood</a></li>
+        </ul>
+        <form class="uk-form" id="searchform" method="post" action="/search">
+            <input class="uk-width-1-1 " type="text" value="" name="q" id="s" placeholder="Search">
+        </form>
+    </div>
+</div>
 <div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-5-6 uk-grid uk-grid-collapse">
     <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
         <div id="index" class="bs uk-text-break">
@@ -31,18 +41,18 @@
             </div>
         </div>
         <ul class="uk-pagination">
-            <% if(result.total > 10)  { %>
+            <% if(result.total > 20)  { %>
             <% if(pageId > 1) { %>
             <li><a href="/mood/<%= pageId-1 %>">«</a></li>
             <% } %>
-            <% for (var i = 0; i < Math.ceil(result.total/10);i++) { %>
+            <% for (var i = 0; i < Math.ceil(result.total/20);i++) { %>
             <% if(i+1 == pageId) {%>
             <li class='uk-active'><span><%= i+1 %></span></li>
             <% } else { %>
             <li><a href='/mood/<%= i+1 %>'><%= i+1 %></a></li>
             <% } %>
             <% } %>
-            <% if(pageId < Math.ceil(result.total/10)) { %>
+            <% if(pageId < Math.ceil(result.total/20)) { %>
             <li><a href="/mood/<%= pageId + 1  %>">»</a></li>
             <% } %>
             <% } %>

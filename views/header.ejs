@@ -12,12 +12,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' type='text/css' media='all' />
     <link href="https://cdn.staticfile.org/emoji/0.2.2/emoji.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 </head>
 
 <body>
 <div id="main" class="wp uk-grid uk-grid-collapse" style="max-width:1120px">
     <div class="uk-width-small-1-1 uk-width-medium-1-4 uk-width-large-1-6 posr">
-        <div id="head" data-uk-sticky="{boundary: true,top:80}">
+        <div id="head" data-uk-sticky="{boundary: true,top:80}" media=" ">
             <div id="op_head">
                 <div class="uk-panel" id="op_hed">
                     <div class="tx"><img src="/images/logo.jpg" /></div>
@@ -33,4 +34,4 @@
                             <a href="/tags" title="标签" data-uk-tooltip="{pos:'bottom'}"></a>
                         </div>
                     </div>
-                    <a href="#s_s" class="s_s uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+                    <a href="#s_s" class="s_s uk-navbar-toggle uk-hidden-large" data-uk-offcanvas="{target:'#s_s'}"></a>

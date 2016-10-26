@@ -90,22 +90,22 @@ router.get('/page/:pageId', function(req, res) {
 //Mood
 router.get('/mood', function(req, res) {
     var _pageId = 1;
-    moodController.fetchBody(10, (_pageId - 1) * 10)
+    moodController.fetchBody(20, (_pageId - 1) * 20)
         .then(function(_result) {
             res.render('mood', {
                 result: _result,
-                pageId: parseInt(_pageId, 10)
+                pageId: parseInt(_pageId, 20)
             });
         })
 });
 
 router.get('/mood/:pageId', function(req, res) {
     var _pageId = req.params.pageId;
-    moodController.fetchBody(10, (_pageId - 1) * 10)
+    moodController.fetchBody(20, (_pageId - 1) * 20)
         .then(function(_result) {
             res.render('mood', {
                 result: _result,
-                pageId: parseInt(_pageId, 10)
+                pageId: parseInt(_pageId, 20)
             });
         })
 });
@@ -173,6 +173,26 @@ router.get('/tag/:id', function(req, res) {
         })
 });
 
+//search
+router.post('/search',function (req, res) {
+    var q = req.body.q;
+    var _search = [];
+    _search.query = q;
+    articleController.search(q)
+        .then(function (result) {
+            _search.articles = result;
+            console.log(_search);
+            res.render('search', {
+                search: _search,
+            })
+        })
+});
+
+//comment
+router.post('/comment', function (req, res) {
+    var _comment = req.body;
+    res.send(_comment);
+})
 
 
 module.exports = router;
