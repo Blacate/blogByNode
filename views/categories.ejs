@@ -29,7 +29,7 @@
   <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
     <div id="index" class="bs uk-text-break">
       <h4>所有分类</h4>
-      <div id="list">
+      <div id="list" class="category">
         <p class="date"><strong><%= locals.name %></strong>目前共有分类：  <%= categories.length %>种  </p>
         <% categories.forEach(function (category) { %>       
           <h2><a href="/category/<%= category._id %>"  ><%= category.name %></a></h2>

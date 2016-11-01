@@ -46,7 +46,6 @@ router.post('/link', function (req, res) {
 
 router.post('/article', function (req, res) {
     var article = req.body;
-    console.log(article);
     articleController.addNew(article)
         .then(function () {
             res.send(204);

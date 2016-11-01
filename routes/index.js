@@ -57,8 +57,8 @@ router.use(function(req, res, next) {
 router.use(function(req, res, next) {
     linkController.fetchAll()
         .then(function(links) {
-            res.locals.discounts = links.filter(function(link) {
-                return link.category === 'discount' });
+            res.locals.discounts = links.filter(function(link) {return link.category === 'discount' });
+            res.locals.friends = links.filter(function (link) { return link.category ===  'friend'});
             next();
         });
 });
@@ -89,14 +89,15 @@ router.get('/page/:pageId', function(req, res) {
 
 //Mood
 router.get('/mood', function(req, res) {
-    var _pageId = 1;
-    moodController.fetchBody(20, (_pageId - 1) * 20)
-        .then(function(_result) {
-            res.render('mood', {
-                result: _result,
-                pageId: parseInt(_pageId, 20)
-            });
-        })
+    // var _pageId = 1;
+    // moodController.fetchBody(20, (_pageId - 1) * 20)
+    //     .then(function(_result) {
+    //         res.render('mood', {
+    //             result: _result,
+    //             pageId: parseInt(_pageId, 20)
+    //         });
+    //     })
+    res.redirect('/mood/1');
 });
 
 router.get('/mood/:pageId', function(req, res) {
@@ -181,7 +182,6 @@ router.post('/search',function (req, res) {
     articleController.search(q)
         .then(function (result) {
             _search.articles = result;
-            console.log(_search);
             res.render('search', {
                 search: _search,
             })

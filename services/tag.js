@@ -4,7 +4,7 @@
 var Tag = require('../model').Tag;
 
 exports.fetchAll = function () {
-    return Tag.find({});
+    return Tag.find({}).sort({createAt : -1 });
 };
 
 exports.add = function (data) {

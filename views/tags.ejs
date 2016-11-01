@@ -29,10 +29,10 @@
   <div class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-7-10">
     <div id="index" class="bs uk-text-break">
       <h4>所有标签</h4>
-      <div id="list">
+      <div id="list" class="tag">
         <p class="date"><strong><%= locals.name %></strong>目前共有标签：  <%= tags.length %>个  </p>
         <% tags.forEach(function (tag) { %>       
-          <h2><a href="/tag/<%= tag._id %>"  ><%= tag.name %></a></h2>
+          <a href="/tag/<%= tag._id %>" class="font-size:16px" ><%= tag.name %></a>
         <% }) %>
       </div>
     </div>

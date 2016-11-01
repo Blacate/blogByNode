@@ -11,7 +11,8 @@ exports.addNew = function (data) {
     var link = {
         name: data.name,
         category: data.category,
-        link: data.link
+        link: data.link,
+        updateTime: Date.now()
     };
     return Link.add(link);
 };

@@ -1,0 +1,67 @@
+<div id="sidebar" class="uk-width-small-1-1 uk-width-medium-1-4 uk-width-large-3-10">
+    <ul class="ul">
+        <li>
+            <h4>近期文章</h4>
+            <ul>
+                <% locals.recentArticles.forEach(function (article) { %>
+                    <li><a href="/article/<%= article._id %>"><%= article.title %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+        <li>
+            <h4>文章分类</h4>
+            <ul>
+                <% locals.categorys.forEach(function (category) { %>
+                    <li><a href='/category/<%= category._id %>'><%= category.name %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+        <li>
+            <h4>标签云</h4>
+            <div class="post-tags">
+                <% locals.tags.forEach(function (tag) { %>
+                    <a href='/tag/<%= tag._id %>' class='tag-link-19' title='6个话题' style='font-size: 12px;'><%= tag.name %></a>
+                <% })%>
+
+
+            </div>
+        </li>
+        <li>
+            <h4>优惠链接</h4>
+            <ul>
+                <% locals.discounts.forEach(function (link) { %>
+                <li><a href='<%= link.link %>'><%= link.name %></a></li>
+                <% }) %>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="ft uk-visible-small">
+    <p><a href="#my-link" data-uk-modal="{target:'#my-link'}">友情链接</a> </p>
+</div>
+</div>
+<a href="#" class="top" data-uk-smooth-scroll style="display:none"><i class="uk-icon-angle-up"></i></a>
+<div id="my-link" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <h2>友情链接</h2>
+        <ul id="link_qzhai" class=" uk-subnav uk-subnav-line">
+            <% locals.friends.forEach(function (friend) { %>
+                <li id="menu-item-601" class="" ><a href="<%= friend.link %>"><%= friend.name %></a></li>
+            <%})%>
+        </ul></div></div>
+<!--<script src="/javascripts/canvas-nest.min.js"></script> -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-84327824-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script src="/javascripts/blog.js"></script>
+</body>
+
+</html>

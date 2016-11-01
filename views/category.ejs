@@ -30,9 +30,15 @@
     <div id="index" class="bs uk-text-break">
       <h4><%= result.CategoryName %></h4>
       <div id="list">
-      <% result.articles.forEach(function (article) { %>       
-            <h2><a href="/article/<%= article._id %>"  ><%= article.title %></a></h2>
-          <% }) %>
+      <% result.articles.forEach(function (article) { %>
+        <article class="article class_3">
+          <h1><a href="/article/<%= article._id %>" ><%= article.title %></a></h1>
+          <p><%= article.description %>
+            <time>
+              <br><%= moment(article.updateTime).format("YYYY年MM月DD日") %></time>
+          </p>
+        </article>
+        <% }) %>
       </div>
     </div>
   </div>
